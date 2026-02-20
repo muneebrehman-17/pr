@@ -555,7 +555,50 @@
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-12px); }
 }
+/* --- FULL SCREEN PRELOADER WRAPPER --- */
+/* --- FULL SCREEN PRELOADER WRAPPER --- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000; /* Changed to solid black so the loader blends perfectly */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999; 
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
 
+/* --- HIDE CLASS (Triggered by JS) --- */
+.preloader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* --- YOUR LOADER CSS --- */
+.loader {
+  width: 80px;
+  aspect-ratio: 1;
+  border: 10px solid #0000;
+  box-sizing: border-box;
+  background: 
+    radial-gradient(farthest-side,#fff 98%,#0000) 0    0/20px 20px,
+    radial-gradient(farthest-side,#fff 98%,#0000) 100% 0/20px 20px,
+    radial-gradient(farthest-side,#fff 98%,#0000) 100% 100%/20px 20px,
+    radial-gradient(farthest-side,#fff 98%,#0000) 0 100%/20px 20px,
+    linear-gradient(#fff 0 0) 50%/40px 40px,
+    #000;
+  background-repeat: no-repeat;
+  filter: blur(4px) contrast(10);
+  animation: l12 0.8s infinite;
+  border-radius: 12px; /* Slight rounded edge to contain the black background */
+}
+
+@keyframes l12 {
+  100%  {background-position:100% 0,100% 100%,0 100%,0 0,center}
+}
 /* Mobile Adjustments for Badges */
 @media screen and (max-width: 960px) {
     .floating-badge {

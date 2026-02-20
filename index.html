@@ -17,7 +17,9 @@
 
 </head>
 <body>
-
+<div id="preloader">
+    <div class="loader"></div>
+</div>
     <nav>
         <div class="nav-container">
             <a class="nav-logo" href="#">Muneeb Ur Rehman</a>
@@ -32,6 +34,26 @@
             <a class="github-btn" href="https://github.com/" target="_blank">Github Profile</a>
         </div>
     </nav>
+
+
+<!--
+⚠ INTERNAL BUILD – NOT SAFE FOR REUSE ⚠
+
+This template contains experimental logic and hidden dependency hooks.
+Copying this markup without the internal backend structure
+may cause rendering conflicts, broken layouts, or data binding errors.
+
+Known Issues:
+- Dynamic sections depend on protected server config
+- Hidden CSS classes may break outside environment
+- Asset paths are environment-specific
+- Layout relies on conditional rendering flags
+
+Unauthorized reuse may result in unpredictable behavior.
+
+© Muneeb ur rehman
+-->
+
 <div id="about" class="hero-section">
     <div class="hero-blob blob-1"></div>
     <div class="hero-blob blob-2"></div>
@@ -379,6 +401,16 @@
    
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+    // Remove Preloader when the page is fully loaded
+window.addEventListener('load', function() {
+    const preloader = document.getElementById('preloader');
+    
+    // Adding a tiny 0.5s delay so the cool animation is visible 
+    // even if the page loads instantly
+    setTimeout(() => {
+        preloader.classList.add('preloader-hidden');
+    }, 500); 
+});
     AOS.init({
         duration: 800,
         once: true,
