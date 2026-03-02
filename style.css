@@ -571,6 +571,12 @@ nav {
     /* Hangs off the right side */
     animation-delay: 0s;
 }
+.badge-4 {
+    bottom: 299px;
+    right: -30px;
+    /* Hangs off the right side */
+    animation-delay: 0s;
+}
 
 .badge-2 {
     top: 60px;
