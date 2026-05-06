@@ -16,12 +16,14 @@
     <link rel="stylesheet" href="marquee.css">
     <link rel="stylesheet" href="progress.css">
     <link rel="stylesheet" href="certifications.css">
+    <link rel="stylesheet" href="projects-page.css">
+    <link rel="stylesheet" href="carousel.css">
     <link rel="stylesheet" href="whatsapp.css">
     <script defer src="script.js"></script>
+    <script defer src="carousel.js"></script>
+    </head>
 
-</head>
-
-<body>
+    <body>
     <div id="preloader">
         <div class="spinner"></div>
     </div>
@@ -40,9 +42,9 @@
                 <li><a class="nav-link" href="#experience">Experience</a></li>
                 <li><a class="nav-link" href="#certifications">Certifications</a></li>
                 <li><a class="nav-link" href="#projects">Projects</a></li>
-                
+
                 <li><a class="nav-link" href="#socials">Socials</a></li>
-                
+
                 <li><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
             <a class="github-btn" href="https://github.com/" target="_blank">Github Profile</a>
@@ -54,23 +56,23 @@
 
 
     <!-- WARNING READ THIS BEFORE COPYING -->
-<!--
-⚠ INTERNAL BUILD – NOT SAFE FOR REUSE ⚠
+    <!--
+    ⚠ INTERNAL BUILD – NOT SAFE FOR REUSE ⚠
 
-This template contains experimental logic and hidden dependency hooks.
-Copying this markup without the internal backend structure
-may cause rendering conflicts, broken layouts, or data binding errors.
+    This template contains experimental logic and hidden dependency hooks.
+    Copying this markup without the internal backend structure
+    may cause rendering conflicts, broken layouts, or data binding errors.
 
-Known Issues:
-- Dynamic sections depend on protected server config
-- Hidden CSS classes may break outside environment
-- Asset paths are environment-specific
-- Layout relies on conditional rendering flags
+    Known Issues:
+    - Dynamic sections depend on protected server config
+    - Hidden CSS classes may break outside environment
+    - Asset paths are environment-specific
+    - Layout relies on conditional rendering flags
 
-Unauthorized reuse may result in unpredictable behavior.
+    Unauthorized reuse may result in unpredictable behavior.
 
-© Muneeb ur rehman
--->
+    © Muneeb ur rehman
+    -->
 
 
 
@@ -110,7 +112,7 @@ Unauthorized reuse may result in unpredictable behavior.
 
             <div class="hero-inner-right" data-aos="fade-left">
                 <img class="hero-img"
-                    src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?q=80&w=1587&auto=format&fit=crop"
+                    src="myimg.jpeg"
                     alt="Muneeb Rehman">
 
                 <div class="floating-badge badge-1">
@@ -128,7 +130,7 @@ Unauthorized reuse may result in unpredictable behavior.
                     <i class="fas fa-code" style="color: #854CE6; font-size: 18px;"></i>
                     <span>.NET Core</span>
                 </div>
-                
+
                 <div class="floating-badge badge-4">
                     <i class="fas fa-code" style="color: #854CE6; font-size: 18px;"></i>
                     <span>React</span>
@@ -395,61 +397,125 @@ Unauthorized reuse may result in unpredictable behavior.
         <div class="wrapper-title" data-aos="fade-up">Projects</div>
         <div class="wrapper-desc" data-aos="fade-up">I have worked on a wide range of projects. Here are some of my top projects.</div>
 
-        <div class="project-grid">
+        <div class="carousel-container" data-aos="fade-up">
+            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
 
-            <div class="project-card" data-aos="fade-up">
-                <img class="project-image"
-                    src="https://i.ibb.co/pjYYdgnW/Default-Minimalist-modern-logo-with-the-text-Jaidadcom-where-J-0.jpg"
-                    alt="Jaidad">
-                <div class="project-tags">
-                    <span class="tag">C#</span>
-                    <span class="tag">ASP.NET</span>
-                    <span class="tag">SignalR</span>
+            <div class="carousel-track">
+                <!-- Project 1: Jaidad -->
+                <div class="carousel-item">
+                    <div class="project-card">
+                        <img class="project-image"
+                            src="https://i.ibb.co/pjYYdgnW/Default-Minimalist-modern-logo-with-the-text-Jaidadcom-where-J-0.jpg"
+                            alt="Jaidad">
+                        <div class="project-tags">
+                            <span class="tag">C#</span>
+                            <span class="tag">ASP.NET</span>
+                        </div>
+                        <div class="project-title">Jaidad.com</div>
+                        <div class="project-description">A complete real estate portal with multi-role authentication, advanced property search filters, and a real-time chat system.</div>
+                        <div class="project-actions">
+                            <a href="http://jaidad.tryasp.net/" target="_blank" class="project-btn">Live App</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-title">Jaidad.com</div>
-                <div class="project-description">A complete real estate portal with multi-role authentication (Admin,
-                    Agent, User), advanced property search filters, and a real-time chat system.</div>
-                <div class="project-actions">
-                    <a href="http://jaidad.tryasp.net/" target="_blank" class="project-btn">Live App</a>
+
+                <!-- Project 2: AgentSync -->
+                <div class="carousel-item">
+                    <div class="project-card">
+                        <img class="project-image" src="aslogo.jpg" alt="AgentSync">
+                        <div class="project-tags">
+                            <span class="tag">Dashboard</span>
+                            <span class="tag">API</span>
+                        </div>
+                        <div class="project-title">AgentSync Dashboard</div>
+                        <div class="project-description">A real-time performance dashboard featuring live activity logs, performance overviews, and comprehensive data visualization.</div>
+                        <div class="project-actions">
+                            <a href="http://agentsync.runasp.net/" target="_blank" class="project-btn">Live App</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: LMS -->
+                <div class="carousel-item">
+                    <div class="project-card">
+                        <img class="project-image"
+                            src="https://i.ibb.co/G3T4xrCd/Default-Minimalist-modern-logo-with-the-letters-LMS-The-letter-0.jpg"
+                            alt="LMS">
+                        <div class="project-tags">
+                            <span class="tag">.NET Core</span>
+                            <span class="tag">AI</span>
+                        </div>
+                        <div class="project-title">LMS System with AI</div>
+                        <div class="project-description">Learning Management System featuring AI content suggestions, student progress tracking, and secure Google Login.</div>
+                        <div class="project-actions">
+                            <a href="https://lmssystem.tryasp.net/" target="_blank" class="project-btn">Live App</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: IWT UAE -->
+                <div class="carousel-item">
+                    <div class="project-card">
+                        <img class="project-image"
+                            src="https://i.ibb.co/m5JcwDdF/ideogram-v3-0-Minimal-luxury-logo-for-IWT-UAE-clean-modern-typography-automotive-detaili-0.png"
+                            alt="IWT UAE">
+                        <div class="project-tags">
+                            <span class="tag">Automotive</span>
+                            <span class="tag">Dubai</span>
+                        </div>
+                        <div class="project-title">IWT UAE</div>
+                        <div class="project-description">Premium automotive services platform for window tinting, PPF, and ceramic coating based in Al Quoz, Dubai.</div>
+                        <div class="project-actions">
+                            <a href="https://iwtuae.com/" target="_blank" class="project-btn">Live App</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: LeadsStack -->
+                <div class="carousel-item">
+                    <div class="project-card">
+                        <img class="project-image"
+                            src="https://i.ibb.co/6Rv1kZRw/ideogram-v3-0-Minimal-modern-Saa-S-logo-for-Leads-Stack-us-tech-startup-branding-Geometri-0.png"
+                            alt="LeadsStack">
+                        <div class="project-tags">
+                            <span class="tag">Lead Gen</span>
+                            <span class="tag">Insurance</span>
+                        </div>
+                        <div class="project-title">LeadsStack.us</div>
+                        <div class="project-description">Insurance marketplace platform connecting clients with carriers for Auto, Home, and Health insurance leads.</div>
+                        <div class="project-actions">
+                            <a href="https://leadsstack.us/" target="_blank" class="project-btn">Live App</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Viva Leads -->
+                <div class="carousel-item">
+                    <div class="project-card">
+                        <img class="project-image"
+                            src="https://i.ibb.co/BkPD12w/ideogram-v3-0-Minimal-bold-logo-for-Viva-Leads-com-modern-marketing-and-lead-generation-0.png"
+                            alt="Viva Leads">
+                        <div class="project-tags">
+                            <span class="tag">Home Services</span>
+                            <span class="tag">Lead Capture</span>
+                        </div>
+                        <div class="project-title">Viva Leads</div>
+                        <div class="project-description">Professional service connector for home improvement, simplifying the search for solar and roofing pros.</div>
+                        <div class="project-actions">
+                            <a href="https://viva-leads.com/" target="_blank" class="project-btn">Live App</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="project-card" data-aos="fade-up">
-                <img class="project-image"
-                    src="https://i.ibb.co/G3T4xrCd/Default-Minimalist-modern-logo-with-the-letters-LMS-The-letter-0.jpg"
-                    alt="LMS">
-                <div class="project-tags">
-                    <span class="tag">.NET Core</span>
-                    <span class="tag">SQL</span>
-                    <span class="tag">AI</span>
-                </div>
-                <div class="project-title">LMS System with AI</div>
-                <div class="project-description">Learning Management System with Student Progress Tracking, AI
-                    Integration for content suggestions, Google Login, and QR Code Login.</div>
-                <div class="project-actions">
-                    <a href="https://lmssystem.tryasp.net/" target="_blank" class="project-btn">Live App</a>
-                </div>
-            </div>
-
-            <div class="project-card" data-aos="fade-up">
-                <img class="project-image" src="aslogo.jpg" alt="AgentSync">
-                <div class="project-tags">
-                    <span class="tag">Dashboard</span>
-                    <span class="tag">Analytics</span>
-                    <span class="tag">API</span>
-                </div>
-                <div class="project-title">AgentSync Dashboard</div>
-                <div class="project-description">A real-time agent performance dashboard featuring live activity logs
-                    and performance overviews with data visualization.</div>
-                <div class="project-actions">
-                    <a href="http://agentsync.runasp.net/" target="_blank" class="project-btn">Live App</a>
-                </div>
-            </div>
-            
-
+            <div class="carousel-indicators"></div>
         </div>
-    </div>
 
+        <!-- <div class="view-all-wrapper" data-aos="fade-up">
+            <a href="projects.html" class="btn-view-all">View Full Gallery <i class="fas fa-arrow-right"></i></a>
+        </div> -->
+    </div>
 
     <!-- Find me Online Section  -->
 
@@ -562,7 +628,7 @@ Unauthorized reuse may result in unpredictable behavior.
     </div>
 
     <footer>
-        <p>&copy; 2026 Muneeb Rehman. All rights reserved.</p>
+        <p>&copy; 2026 Muneeb Rehman. All rights reserved. Updated 2025</p>
     </footer>
 
     <!-- Floating WhatsApp Button -->
