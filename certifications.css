@@ -1,0 +1,191 @@
+/* Modern Certifications Redesign - Aligned with Theme */
+.certifications-section {
+    padding: 100px 20px;
+    background-color: var(--bg-color); /* Match global background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    justify-content: center; /* Center items if they don't fill the row */
+    gap: 30px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Adjust grid for the expandable container specifically to ensure centering */
+.cert-expandable-container .cert-grid {
+    display: flex; /* Use flex for the expanded row to easily center the 2 items */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cert-expandable-container .cert-card {
+    flex: 1 1 320px;
+    max-width: 350px; /* Prevent them from stretching too wide in flex mode */
+}
+
+.cert-card {
+    background: #ffffff; /* Match Skill Cards */
+    border: 1px solid rgba(0, 0, 0, 0.08); /* Match Skill Card Border */
+    border-radius: 16px; /* Match Skill Card Radius */
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04); /* Match Skill Card Shadow */
+}
+
+.cert-card:hover {
+    transform: translateY(-5px); /* Match Skill Card Hover */
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(133, 76, 230, 0.1);
+}
+
+.cert-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 210, 106, 0.1);
+    color: #00d26a;
+    padding: 4px 10px;
+    border-radius: 8px; /* Matching smaller radius pattern */
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.cert-icon-box {
+    width: 50px;
+    height: 50px;
+    background: rgba(133, 76, 230, 0.1); /* Lighter theme-consistent background */
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+    font-size: 24px;
+}
+
+.cert-info {
+    flex-grow: 1;
+}
+
+.cert-issuer-tag {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 4px;
+    display: block;
+}
+
+.cert-card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-white);
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+
+.cert-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.cert-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cert-footer {
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.view-cred-btn {
+    color: var(--primary-color); /* Match project link color pattern */
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s;
+}
+
+.view-cred-btn:hover {
+    gap: 10px;
+}
+
+/* Expandable Certification Container - Stutter Free */
+.cert-expandable-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s cubic-bezier(0.65, 0, 0.35, 1), 
+                opacity 0.6s ease, 
+                transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+    opacity: 0;
+    width: 100%;
+    transform: translateY(-20px); /* Start slightly up for smooth slide-in */
+}
+
+.cert-expandable-container.active {
+    max-height: 1000px; /* More realistic height to prevent scroll speed jump */
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 30px;
+}
+
+.cert-toggle-wrapper {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    position: relative;
+}
+
+.cert-toggle-btn {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.cert-toggle-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0 5px 15px rgba(133, 76, 230, 0.3);
+}
+
+.cert-toggle-btn i {
+    transition: transform 0.3s ease;
+}
+
+.cert-toggle-btn.active i {
+    transform: rotate(180deg);
+}

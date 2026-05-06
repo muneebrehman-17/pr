@@ -1,0 +1,75 @@
+/* Tech Stack Marquee Styles */
+.marquee-section {
+    padding: 50px 0;
+    background-color: #ffffff;
+    overflow: hidden;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.marquee-container {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    user-select: none;
+}
+
+.marquee-content {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 100%;
+    gap: 60px;
+    animation: scroll 30s linear infinite;
+    padding: 0 30px;
+}
+
+.marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.marquee-item i {
+    font-size: 28px;
+    color: var(--primary-color);
+}
+
+.marquee-item:hover {
+    color: var(--primary-color);
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Pause animation on hover */
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 768px) {
+    .marquee-item {
+        font-size: 16px;
+        gap: 8px;
+    }
+    .marquee-item i {
+        font-size: 22px;
+    }
+    .marquee-content {
+        gap: 40px;
+    }
+}
