@@ -38,6 +38,67 @@ body {
     overflow-x: hidden;
 }
 
+/* --- Custom Cursor --- */
+@media screen and (min-width: 961px) {
+    body {
+        cursor: none;
+    }
+    
+    a, button, .nav-link, .github-btn, .project-btn, .view-cred-btn, .skill-badge, .expertise-badge-item, .social-card, .submit-btn, .whatsapp-float {
+        cursor: none;
+    }
+
+    .cursor-dot {
+        width: 8px;
+        height: 8px;
+        background-color: var(--primary-color);
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: 10000;
+        pointer-events: none;
+        /* Remove transform transition to ensure absolute zero delay */
+        transition: width 0.3s, height 0.3s, background-color 0.3s;
+    }
+
+    .cursor-outline {
+        width: 40px;
+        height: 40px;
+        border: 2px solid var(--primary-color);
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: 9999;
+        pointer-events: none;
+        /* Position is handled by JS animation loop for the trail effect */
+        transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s, opacity 0.3s;
+    }
+
+    /* Hover state for cursor */
+    .cursor-hover .cursor-dot {
+        transform: translate(-50%, -50%) scale(1.5);
+        background-color: #fff;
+    }
+
+    .cursor-hover .cursor-outline {
+        width: 60px;
+        height: 60px;
+        background-color: rgba(133, 76, 230, 0.1);
+        border-color: var(--primary-color);
+    }
+}
+
+/* Hide custom cursor on mobile/touch devices */
+@media screen and (max-width: 960px) {
+    .cursor-dot, .cursor-outline {
+        display: none;
+    }
+}
+
 /* --- Navbar --- */
 nav {
     background-color: var(--card-color);
@@ -383,6 +444,117 @@ nav {
     background: rgba(133, 76, 230, 0.05);
     color: var(--primary-color);
     transform: translateY(-2px);
+}
+
+/* --- Expertise Section --- */
+.expertise-section {
+    padding: 100px 20px;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(133, 76, 230, 0.1);
+    border-bottom: 1px solid rgba(133, 76, 230, 0.1);
+}
+
+.expertise-overlay-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: 0;
+    opacity: 0.4;
+    animation: blobFloat 15s infinite ease-in-out;
+}
+
+.expertise-overlay-blob.blob-1 {
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: rgba(133, 76, 230, 0.15);
+}
+
+.expertise-overlay-blob.blob-2 {
+    bottom: -100px;
+    left: -100px;
+    width: 500px;
+    height: 500px;
+    background: rgba(48, 110, 232, 0.1);
+    animation-delay: -5s;
+}
+
+@keyframes blobFloat {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+.expertise-badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.expertise-badge-item {
+    padding: 14px 28px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(133, 76, 230, 0.2);
+    border-radius: 50px;
+    color: var(--text-white);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: default;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 32px 0 rgba(133, 76, 230, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    user-select: none;
+}
+
+.expertise-badge-item i {
+    font-size: 18px;
+    color: var(--primary-color);
+    transition: all 0.3s;
+}
+
+.expertise-badge-item:hover {
+    transform: translateY(-8px) scale(1.08);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #306EE8 100%);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 15px 30px rgba(133, 76, 230, 0.3);
+}
+
+.expertise-badge-item:hover i {
+    color: #ffffff;
+    transform: rotate(360deg);
+}
+
+/* Floating animation for badges */
+@keyframes badgeFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.expertise-badge-item:nth-child(odd) {
+    animation: badgeFloat 4s infinite ease-in-out;
+}
+
+.expertise-badge-item:nth-child(even) {
+    animation: badgeFloat 4s infinite ease-in-out;
+    animation-delay: 1s;
+}
+
+.expertise-badge-item:hover {
+    animation-play-state: paused;
 }
 
 /* --- Experience Section --- */

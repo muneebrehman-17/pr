@@ -82,3 +82,48 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Custom Cursor Logic
+const dot = document.querySelector('.cursor-dot');
+const outline = document.querySelector('.cursor-outline');
+
+let mouseX = 0;
+let mouseY = 0;
+let outlineX = 0;
+let outlineY = 0;
+
+if (dot && outline) {
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        // Move dot instantly with no delay
+        dot.style.left = `${mouseX}px`;
+        dot.style.top = `${mouseY}px`;
+    });
+
+    function animateCursor() {
+        // Linear Interpolation (lerp) for smooth trailing effect
+        // 0.15 is the speed of follow (lower = slower/more trail)
+        outlineX += (mouseX - outlineX) * 0.15;
+        outlineY += (mouseY - outlineY) * 0.15;
+
+        outline.style.left = `${outlineX}px`;
+        outline.style.top = `${outlineY}px`;
+
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Hover effect for interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, .nav-link, .github-btn, .project-btn, .view-cred-btn, .skill-badge, .expertise-badge-item, .social-card, .submit-btn, .whatsapp-float, #certToggle');
+
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            document.body.classList.add('cursor-hover');
+        });
+        el.addEventListener('mouseleave', () => {
+            document.body.classList.remove('cursor-hover');
+        });
+    });
+}
