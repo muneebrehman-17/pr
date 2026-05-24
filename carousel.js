@@ -1,70 +1,121 @@
-// Project Carousel Logic
+// Project Carousel Logic - Seamless Infinite Loop
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.querySelector('.carousel-track');
-    if (!track) return;
+    const container = document.querySelector('.carousel-container');
+    if (!track || !container) return;
+
+    // Original items
+    const originalItems = Array.from(track.children);
+    const itemCount = originalItems.length;
+    
+    // Clone items for seamless loop
+    originalItems.forEach(item => {
+        const clone = item.cloneNode(true);
+        track.appendChild(clone);
+    });
+    originalItems.forEach(item => {
+        const clone = item.cloneNode(true);
+        track.insertBefore(clone, track.firstChild);
+    });
 
     const items = Array.from(track.children);
     const nextButton = document.querySelector('.carousel-btn.next');
     const prevButton = document.querySelector('.carousel-btn.prev');
     const indicatorsContainer = document.querySelector('.carousel-indicators');
 
-    let currentIndex = 0;
+    let currentIndex = itemCount; // Start at the first original item
+    let isTransitioning = false;
+    let autoPlayInterval;
+    const autoPlaySpeed = 4000;
 
-    // Create indicators
-    items.forEach((_, i) => {
+    // Create indicators (based on original items)
+    originalItems.forEach((_, i) => {
         const indicator = document.createElement('div');
         indicator.classList.add('indicator');
         if (i === 0) indicator.classList.add('active');
-        indicator.addEventListener('click', () => moveToItem(i));
+        indicator.addEventListener('click', () => {
+            if (isTransitioning) return;
+            moveToItem(i + itemCount);
+            resetAutoPlay();
+        });
         indicatorsContainer.appendChild(indicator);
     });
 
     const indicators = Array.from(indicatorsContainer.children);
 
     const updateIndicators = (index) => {
+        const realIndex = (index - itemCount + itemCount) % itemCount;
         indicators.forEach((indicator, i) => {
-            indicator.classList.toggle('active', i === index);
+            indicator.classList.toggle('active', i === realIndex);
         });
     };
 
-    const moveToItem = (index) => {
-        const itemWidth = items[0].getBoundingClientRect().width + 30; // Width + Gap
+    const moveToItem = (index, animate = true) => {
+        if (animate) {
+            isTransitioning = true;
+            track.style.transition = 'transform 1s cubic-bezier(0.6, 0, 0.4, 1)';
+        } else {
+            track.style.transition = 'none';
+        }
+
+        const itemWidth = originalItems[0].getBoundingClientRect().width + 30;
         track.style.transform = `translateX(-${index * itemWidth}px)`;
         currentIndex = index;
         updateIndicators(index);
-        
-        // Disable/Enable buttons
-        prevButton.style.opacity = index === 0 ? '0.5' : '1';
-        prevButton.style.pointerEvents = index === 0 ? 'none' : 'auto';
-        
-        const visibleItems = getVisibleItemsCount();
-        const isEnd = index >= items.length - visibleItems;
-        nextButton.style.opacity = isEnd ? '0.5' : '1';
-        nextButton.style.pointerEvents = isEnd ? 'none' : 'auto';
     };
 
-    const getVisibleItemsCount = () => {
-        if (window.innerWidth <= 768) return 1;
-        if (window.innerWidth <= 1024) return 2;
-        return 3;
+    track.addEventListener('transitionend', () => {
+        isTransitioning = false;
+        
+        // Seamless jump at boundaries
+        if (currentIndex >= itemCount * 2) {
+            moveToItem(itemCount, false);
+        } else if (currentIndex < itemCount) {
+            moveToItem(itemCount * 2 - 1, false);
+        }
+    });
+
+    const nextSlide = () => {
+        if (isTransitioning) return;
+        moveToItem(currentIndex + 1);
+    };
+
+    const prevSlide = () => {
+        if (isTransitioning) return;
+        moveToItem(currentIndex - 1);
     };
 
     nextButton.addEventListener('click', () => {
-        const visibleItems = getVisibleItemsCount();
-        if (currentIndex < items.length - visibleItems) {
-            moveToItem(currentIndex + 1);
-        }
+        nextSlide();
+        resetAutoPlay();
     });
 
     prevButton.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            moveToItem(currentIndex - 1);
-        }
+        prevSlide();
+        resetAutoPlay();
     });
 
-    // Handle Window Resize
-    window.addEventListener('resize', () => moveToItem(currentIndex));
+    const startAutoPlay = () => {
+        autoPlayInterval = setInterval(nextSlide, autoPlaySpeed);
+    };
 
-    // Initial state
-    moveToItem(0);
+    const stopAutoPlay = () => {
+        clearInterval(autoPlayInterval);
+    };
+
+    const resetAutoPlay = () => {
+        stopAutoPlay();
+        startAutoPlay();
+    };
+
+    container.addEventListener('mouseenter', stopAutoPlay);
+    container.addEventListener('mouseleave', startAutoPlay);
+
+    window.addEventListener('resize', () => {
+        moveToItem(currentIndex, false);
+    });
+
+    // Initial position
+    moveToItem(currentIndex, false);
+    startAutoPlay();
 });

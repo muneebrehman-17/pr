@@ -33,22 +33,55 @@
 }
 
 .cert-card {
-    background: #ffffff; /* Match Skill Cards */
-    border: 1px solid rgba(0, 0, 0, 0.08); /* Match Skill Card Border */
-    border-radius: 16px; /* Match Skill Card Radius */
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
     padding: 32px 24px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04); /* Match Skill Card Shadow */
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cert-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(133, 76, 230, 0.08) 0%, transparent 70%);
+    z-index: -1;
+}
+
+.cert-card::after {
+    content: "\f058"; /* FontAwesome check-circle */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    font-size: 140px;
+    color: var(--primary-color);
+    opacity: 0.1;
+    transform: rotate(-15deg);
+    z-index: -1;
+    transition: all 0.6s ease;
 }
 
 .cert-card:hover {
-    transform: translateY(-5px); /* Match Skill Card Hover */
+    transform: translateY(-10px);
     border-color: var(--primary-color);
-    box-shadow: 0 10px 30px rgba(133, 76, 230, 0.1);
+    box-shadow: 0 20px 40px rgba(133, 76, 230, 0.12);
+}
+
+.cert-card:hover::after {
+    opacity: 0.18;
+    transform: rotate(0deg) scale(1.1);
 }
 
 .cert-badge {

@@ -6,17 +6,30 @@
     margin: 0 auto;
     overflow: hidden;
     padding: 20px 0 60px;
+    cursor: grab;
+}
+
+.carousel-container:active {
+    cursor: grabbing;
 }
 
 .carousel-track {
     display: flex;
-    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    /* transition is controlled via JS for seamless looping */
     gap: 30px;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .carousel-item {
     flex: 0 0 calc(33.333% - 20px);
     min-width: 300px;
+    transition: transform 0.4s ease;
+}
+
+.carousel-item:hover {
+    transform: scale(1.02); /* Subtle lift on hover */
 }
 
 /* Navigation Buttons */
