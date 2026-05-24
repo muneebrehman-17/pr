@@ -19,8 +19,10 @@
     <link rel="stylesheet" href="projects-page.css">
     <link rel="stylesheet" href="carousel.css">
     <link rel="stylesheet" href="whatsapp.css">
+    <link rel="stylesheet" href="assistant.css">
     <script defer src="script.js"></script>
     <script defer src="carousel.js"></script>
+    <script defer src="assistant.js"></script>
     </head>
 
     <body>
@@ -702,6 +704,40 @@
     <a href="https://wa.me/923174852490" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- Ask Muneeb Assistant -->
+    <div class="assistant-wrapper">
+        <div class="assistant-window">
+            <div class="assistant-header">
+                <div class="assistant-title"><i class="fas fa-robot"></i> Ask Muneeb</div>
+                <button class="assistant-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="assistant-body" id="assistantBody">
+                <div class="typing-indicator" id="typingIndicator">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            </div>
+            <!-- Interactive Input Area -->
+            <div class="assistant-input-area" id="assistantInputArea">
+                <input type="text" id="assistantInput" placeholder="Type here..." autocomplete="off">
+                <button id="assistantSend" aria-label="Send message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        <div class="assistant-hint" id="assistantHint">
+            <span class="hint-text">Ask me a question! ✨</span>
+            <div class="hint-arrow"></div>
+        </div>
+        <button class="assistant-btn" id="assistantToggle" aria-label="Ask Muneeb">
+            <div class="bot-icon-container">
+                <i class="fas fa-robot"></i>
+                <div class="bot-pulse"></div>
+            </div>
+        </button>
+    </div>
 
 </body>
 

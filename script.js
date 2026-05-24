@@ -4,6 +4,9 @@ window.addEventListener('load', () => {
     if (preloader) {
         setTimeout(() => {
             preloader.classList.add('preloader-hidden');
+            // Show Assistant after preloader is gone
+            const assistant = document.querySelector('.assistant-wrapper');
+            if (assistant) assistant.classList.add('visible');
         }, 500);
     }
 });
@@ -126,6 +129,17 @@ if (dot && outline) {
             document.body.classList.remove('cursor-hover');
         });
     });
+
+    // Hide custom cursor over Ask Muneeb Assistant
+    const assistantWrapper = document.querySelector('.assistant-wrapper');
+    if (assistantWrapper) {
+        assistantWrapper.addEventListener('mouseenter', () => {
+            document.body.classList.add('hide-custom-cursor');
+        });
+        assistantWrapper.addEventListener('mouseleave', () => {
+            document.body.classList.remove('hide-custom-cursor');
+        });
+    }
 }
 
 // Mobile Expertise Marquee Logic

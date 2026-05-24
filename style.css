@@ -57,10 +57,9 @@ body {
         left: 0;
         transform: translate(-50%, -50%);
         border-radius: 50%;
-        z-index: 10000;
+        z-index: 2147483647; /* Highest z-index */
         pointer-events: none;
-        /* Remove transform transition to ensure absolute zero delay */
-        transition: width 0.3s, height 0.3s, background-color 0.3s;
+        transition: width 0.3s, height 0.3s, background-color 0.3s, opacity 0.2s;
     }
 
     .cursor-outline {
@@ -72,10 +71,14 @@ body {
         left: 0;
         transform: translate(-50%, -50%);
         border-radius: 50%;
-        z-index: 9999;
+        z-index: 2147483646; /* Just below dot */
         pointer-events: none;
-        /* Position is handled by JS animation loop for the trail effect */
-        transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s, opacity 0.3s;
+        transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s, opacity 0.2s;
+    }
+
+    body.hide-custom-cursor .cursor-dot,
+    body.hide-custom-cursor .cursor-outline {
+        opacity: 0 !important;
     }
 
     /* Hover state for cursor */
