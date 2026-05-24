@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (this.frame >= end) { complete++; output += to; }
                 else if (this.frame >= start) {
                     if (!char || Math.random() < 0.28) { char = this.randomChar(); this.queue[i].char = char; }
-                    output += `<span style="opacity: 0.5;">${char}</span>`;
+                    output += '<span style="opacity: 0.5;">' + char + '</span>';
                 } else { output += from; }
             }
             this.el.innerHTML = output;
@@ -244,8 +244,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function addMessage(text, isUser = false) {
         const msgDiv = document.createElement('div');
-        msgDiv.className = `chat-msg ${isUser ? 'user' : 'bot'}`;
-        msgDiv.innerHTML = `<div class="msg-bubble">${text}</div>`;
+        msgDiv.className = 'chat-msg ' + (isUser ? 'user' : 'bot');
+        msgDiv.innerHTML = '<div class="msg-bubble">' + text + '</div>';
         bodyEl.insertBefore(msgDiv, typingIndicator);
         bodyEl.scrollTop = bodyEl.scrollHeight;
     }
@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const btn = document.createElement('div');
             btn.className = 'chat-option-chip';
             btn.innerText = opt.label;
-            btn.style.animationDelay = `${index * 0.1}s`;
+            btn.style.animationDelay = (index * 0.1) + 's';
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 optsDiv.remove();
@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formData.append('access_key', 'fb0a0b88-68de-4051-ac56-e31e71a03be2');
         formData.append('email', leadData.email);
         formData.append('message', leadData.details);
-        formData.append('subject', `Project Inquiry from ${leadData.email}`);
+        formData.append('subject', 'Project Inquiry from ' + leadData.email);
         formData.append('from_name', 'Ask Muneeb Assistant');
         try {
             const response = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData });

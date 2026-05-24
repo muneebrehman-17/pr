@@ -240,9 +240,68 @@ class TextScramble {
     }
 }
 
+// Footer Stats Logic (Location & Time)
+async function initFooterStats() {
+    const userLocEl = document.getElementById('userLocation');
+    const userTimeEl = document.getElementById('userTime');
+    const pkTimeEl = document.getElementById('pkTime');
+
+    if (!userLocEl || !userTimeEl || !pkTimeEl) return;
+
+    // Fetch User Location using ipapi.co (Reliable and fast)
+    try {
+        const response = await fetch('https://ipapi.co/json/');
+        const data = await response.json();
+        
+        if (data && !data.error) {
+            const city = data.city || "";
+            const country = data.country_name || "";
+            const region = data.region || "";
+            
+            if (city && country) {
+                userLocEl.innerText = city + ", " + data.country_code;
+            } else if (region && country) {
+                userLocEl.innerText = region + ", " + data.country_code;
+            } else if (country) {
+                userLocEl.innerText = country;
+            } else {
+                userLocEl.innerText = "Planet Earth";
+            }
+        } else {
+            userLocEl.innerText = "Global Citizen";
+        }
+    } catch (error) {
+        console.error("Location error:", error);
+        userLocEl.innerText = "Earth (Local)";
+    }
+
+    // Update Clocks every second
+    setInterval(() => {
+        const now = new Date();
+        
+        // User Local Time
+        userTimeEl.innerText = now.toLocaleTimeString('en-US', { 
+            hour12: false, 
+            hour: '2-digit', 
+            minute: '2-digit', 
+            second: '2-digit' 
+        });
+
+        // PK Time (UTC+5)
+        const pkTime = new Date(new Date().toLocaleString("en-US", {timeZone: "Asia/Karachi"}));
+        pkTimeEl.innerText = pkTime.toLocaleTimeString('en-US', { 
+            hour12: false, 
+            hour: '2-digit', 
+            minute: '2-digit', 
+            second: '2-digit' 
+        });
+    }, 1000);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     initExpertiseMarquee(); // Initialize marquee for expertise badges
     initFooterFollow(); // Initialize interactive footer marquee
+    initFooterStats(); // Initialize location and time stats
     
     const el = document.querySelector('.typing-text');
     if (el) {
