@@ -84,6 +84,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // API Accordion Toggle Logic
+    const apiHeaders = document.querySelectorAll('.api-accordion-header');
+    apiHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const group = header.parentElement;
+            const isActive = group.classList.contains('active');
+            
+            // Close all groups
+            document.querySelectorAll('.api-category-group').forEach(g => {
+                g.classList.remove('active');
+            });
+            
+            // If the clicked group wasn't active, open it
+            if (!isActive) {
+                group.classList.add('active');
+            }
+        });
+    });
 });
 
 // Custom Cursor Logic
@@ -119,7 +138,7 @@ if (dot && outline) {
     animateCursor();
 
     // Hover effect for interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, .nav-link, .github-btn, .project-btn, .view-cred-btn, .skill-badge, .expertise-badge-item, .social-card, .submit-btn, .whatsapp-float, #certToggle');
+    const interactiveElements = document.querySelectorAll('a, button, .nav-link, .github-btn, .project-btn, .view-cred-btn, .skill-badge, .expertise-badge-item, .social-card, .submit-btn, .whatsapp-float, #certToggle, .api-accordion-header');
 
     interactiveElements.forEach(el => {
         el.addEventListener('mouseenter', () => {

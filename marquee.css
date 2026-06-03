@@ -22,7 +22,7 @@
     justify-content: space-around;
     min-width: 100%;
     gap: 60px;
-    animation: scroll 30s linear infinite;
+    animation: scroll-original 30s linear infinite;
     padding: 0 30px;
 }
 
@@ -46,7 +46,7 @@
     color: var(--primary-color);
 }
 
-@keyframes scroll {
+@keyframes scroll-original {
     from {
         transform: translateX(0);
     }
@@ -60,6 +60,251 @@
     animation-play-state: paused;
 }
 
+/* API Integrations Marquee Styles */
+.api-marquee-section {
+    padding: 10px 0;
+    background-color: transparent;
+    overflow: hidden;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+/* API Metrics Styles */
+.api-metrics-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+.api-metric-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(133, 76, 230, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    min-width: 200px;
+    transition: all 0.3s ease;
+}
+
+.api-metric-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 25px rgba(133, 76, 230, 0.1);
+}
+
+.api-metric-number {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--primary-color);
+    background: linear-gradient(to right, #854CE6, #306EE8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 5px;
+}
+
+.api-metric-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+/* API Accordion & Badge Optimization */
+.api-category-group {
+    margin-bottom: 15px;
+    border: 1px solid rgba(133, 76, 230, 0.1);
+    border-radius: 12px;
+    background: #ffffff;
+    overflow: hidden;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.api-accordion-header {
+    width: 100%;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: #ffffff;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.api-accordion-header:hover {
+    background: rgba(133, 76, 230, 0.03);
+}
+
+.api-category-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    color: var(--text-white);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.api-category-label i {
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
+.accordion-icon {
+    font-size: 14px;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.api-category-group.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.api-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #fcfaff;
+}
+
+.api-category-group.active .api-accordion-content {
+    max-height: 500px; /* Adjust based on content */
+}
+
+.api-marquee-container {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    user-select: none;
+    padding: 15px 0;
+}
+
+.api-marquee-content {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    width: max-content;
+    gap: 20px;
+    animation: scroll-api 40s linear infinite;
+    padding: 0 10px;
+    will-change: transform;
+}
+
+.api-marquee-content.reverse {
+    animation: scroll-api-reverse 40s linear infinite;
+}
+
+@keyframes scroll-api {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-api-reverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+.api-marquee-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 18px; /* Pill padding */
+    width: auto; /* Dynamic width for text */
+    height: auto;
+    min-width: 100px;
+    background: #ffffff;
+    border: 1px solid rgba(133, 76, 230, 0.1);
+    border-radius: 30px; /* Fully rounded pill */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.api-marquee-item:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(133, 76, 230, 0.2);
+}
+
+.api-marquee-item span {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.api-marquee-item:hover span {
+    color: #ffffff;
+}
+
+/* Remove unused image styles */
+.api-marquee-item img { display: none; }
+
+/* API Reports Section */
+.api-reports-section {
+    margin-top: 60px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.api-reports-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.api-reports-title i {
+    color: var(--primary-color);
+}
+
+.api-report-frame {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 16px;
+    border: 1px solid rgba(133, 76, 230, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.api-report-frame:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 15px 50px rgba(133, 76, 230, 0.12);
+}
+
+.api-report-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
 /* Mobile Adjustments */
 @media screen and (max-width: 768px) {
     .marquee-item {
@@ -71,5 +316,39 @@
     }
     .marquee-content {
         gap: 40px;
+    }
+
+    .api-marquee-content {
+        gap: 20px;
+        animation-duration: 60s;
+    }
+    
+    .api-metrics-row {
+        gap: 15px;
+    }
+    .api-metric-card {
+        padding: 15px 20px;
+        min-width: 140px;
+        flex: 1 1 140px;
+    }
+    .api-metric-number {
+        font-size: 24px;
+    }
+    .api-metric-text {
+        font-size: 11px;
+    }
+    .api-category-group {
+        width: 95%;
+    }
+    .api-marquee-item {
+        width: 90px;
+        min-width: 90px;
+        height: 50px;
+    }
+    .api-reports-title {
+        font-size: 20px;
+    }
+    .api-report-frame {
+        padding: 5px;
     }
 }
