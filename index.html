@@ -23,9 +23,9 @@
     <script defer src="script.js"></script>
     <script defer src="carousel.js"></script>
     <script defer src="assistant.js"></script>
-    </head>
+</head>
 
-    <body>
+<body>
     <div id="preloader">
         <div class="spinner"></div>
     </div>
@@ -33,7 +33,7 @@
 
 
 
-        <!-- Nav Sectiopn is hewre  -->
+    <!-- Nav Sectiopn is hewre  -->
 
     <nav>
         <div class="nav-container">
@@ -50,7 +50,15 @@
 
                 <li><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
-            <a class="github-btn" href="https://github.com/" target="_blank">Github Profile</a>
+            <div style="display: flex; gap: 10px;">
+                <!-- <a class="github-btn" href="https://github.com/" target="_blank">Github Profile</a> -->
+                <a class="github-btn" id="resume-download-btn"
+                    style="background: linear-gradient(to right, #ff0000, #ff4d4d, #ff0000); border: none; color: white; box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; width: 175px; height: 42px; box-sizing: border-box; padding: 0;"
+                    href="#">
+                    <span class="btn-text">Download Resume</span>
+                    <div class="loader" id="resume-loader"></div>
+                </a>
+            </div>
         </div>
     </nav>
     <div class="progress-container">
@@ -114,9 +122,7 @@
             </div>
 
             <div class="hero-inner-right" data-aos="fade-left">
-                <img class="hero-img"
-                    src="myimg.jpeg"
-                    alt="Muneeb Rehman">
+                <img class="hero-img" src="myimg.jpeg" alt="Muneeb Rehman">
 
                 <div class="floating-badge badge-1">
                     <i class="fas fa-check-circle" style="color: #00d26a; font-size: 18px;"></i>
@@ -184,6 +190,8 @@
                     <div class="skill-badge"><i class="fas fa-rocket"></i> Reqbin</div>
                     <div class="skill-badge"><i class="fas fa-laptop-code"></i> Visual Studio</div>
                     <div class="skill-badge"><i class="fab fa-docker"></i> Docker (Basic)</div>
+                    <div class="skill-badge"><i class="fas fa-network-wired"></i> FileZilla</div>
+                    <div class="skill-badge"><i class="fas fa-server"></i> Hostbreak</div>
                 </div>
             </div>
 
@@ -225,7 +233,7 @@
     <div id="expertise" class="expertise-section">
         <div class="expertise-overlay-blob blob-1"></div>
         <div class="expertise-overlay-blob blob-2"></div>
-        
+
         <div class="section-header" data-aos="fade-up">
             <h2 class="section-title">My Expertise</h2>
             <p class="section-subtitle">Core technical specialties and professional capabilities.</p>
@@ -257,10 +265,12 @@
 
 
     <!-- Call Center API Integrations Section -->
-    <div id="api-integrations" class="skills-section" style="background-color: #ffffff; border-top: 1px solid rgba(133, 76, 230, 0.05);">
+    <div id="api-integrations" class="skills-section"
+        style="background-color: #ffffff; border-top: 1px solid rgba(133, 76, 230, 0.05);">
         <div class="section-header" data-aos="fade-up">
             <h2 class="section-title">Call Center Campaigns</h2>
-            <p class="section-subtitle">Extensive experience integrating industry-leading APIs and lead distribution systems.</p>
+            <p class="section-subtitle">Extensive experience integrating industry-leading APIs and lead distribution
+                systems.</p>
         </div>
 
         <!-- API Metrics Row -->
@@ -278,7 +288,7 @@
                 <span class="api-metric-text">API Requests Processed</span>
             </div>
             <div class="api-metric-card">
-                <span class="api-metric-number">5+</span>
+                <span class="api-metric-number">2+</span>
                 <span class="api-metric-text">Years Backend Exp.</span>
             </div>
         </div>
@@ -474,7 +484,7 @@
     </div>
 
 
-        <!-- Certification Section Here  -->
+    <!-- Certification Section Here  -->
 
 
     <div id="certifications" class="certifications-section">
@@ -500,7 +510,8 @@
                     </div>
                 </div>
                 <div class="cert-footer">
-                    <a href="#" target="_blank" class="view-cred-btn">View Credential <i class="fas fa-external-link-alt"></i></a>
+                    <a href="#" target="_blank" class="view-cred-btn">View Credential <i
+                            class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
 
@@ -518,7 +529,8 @@
                     </div>
                 </div>
                 <div class="cert-footer">
-                    <a href="#" target="_blank" class="view-cred-btn">View Credential <i class="fas fa-external-link-alt"></i></a>
+                    <a href="#" target="_blank" class="view-cred-btn">View Credential <i
+                            class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
 
@@ -528,15 +540,16 @@
                     <i class="fas fa-laptop-code"></i>
                 </div>
                 <div class="cert-info">
-                    <span class="cert-issuer-tag">W3Schools</span>
-                    <h3 class="cert-card-title">.NET (Basic & Intermediate)</h3>
+                    <span class="cert-issuer-tag">JHY Techs</span>
+                    <h3 class="cert-card-title">.NET, C#, SQL</h3>
                     <div class="cert-meta">
-                        <span><i class="far fa-calendar-alt"></i> Sep 2025</span>
-                        <span><i class="fas fa-award"></i> Distinction</span>
+                        <span><i class="far fa-calendar-alt"></i> 2025-2026</span>
+                        <span><i class="fas fa-award"></i> Professional</span>
                     </div>
                 </div>
                 <div class="cert-footer">
-                    <a href="#" target="_blank" class="view-cred-btn">View Credential <i class="fas fa-external-link-alt"></i></a>
+                    <a href="#" target="_blank" class="view-cred-btn">View Credential <i
+                            class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
 
@@ -548,36 +561,38 @@
                 <div class="cert-card">
                     <div class="cert-badge"><i class="fas fa-check-circle"></i> Verified</div>
                     <div class="cert-icon-box">
-                        <i class="fas fa-code"></i>
+                        <i class="fas fa-globe"></i>
                     </div>
                     <div class="cert-info">
-                        <span class="cert-issuer-tag">W3Schools</span>
-                        <h3 class="cert-card-title">C# (Basic & Intermediate)</h3>
+                        <span class="cert-issuer-tag">Course</span>
+                        <h3 class="cert-card-title">Full Stack Web Development</h3>
                         <div class="cert-meta">
-                            <span><i class="far fa-calendar-alt"></i> Nov 2024</span>
-                            <span><i class="fas fa-award"></i> Distinction</span>
+                            <span><i class="far fa-calendar-alt"></i> 2022-2026</span>
+                            <span><i class="fas fa-award"></i> Professional</span>
                         </div>
                     </div>
                     <div class="cert-footer">
-                        <a href="#" target="_blank" class="view-cred-btn">View Credential <i class="fas fa-external-link-alt"></i></a>
+                        <a href="#" target="_blank" class="view-cred-btn">View Credential <i
+                                class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
 
                 <div class="cert-card">
                     <div class="cert-badge"><i class="fas fa-check-circle"></i> Verified</div>
                     <div class="cert-icon-box">
-                        <i class="fas fa-database"></i>
+                        <i class="fas fa-project-diagram"></i>
                     </div>
                     <div class="cert-info">
-                        <span class="cert-issuer-tag">W3Schools</span>
-                        <h3 class="cert-card-title">SQL (Basic & Intermediate)</h3>
+                        <span class="cert-issuer-tag">FFH Lahore</span>
+                        <h3 class="cert-card-title">Projects Management</h3>
                         <div class="cert-meta">
-                            <span><i class="far fa-calendar-alt"></i> Sep 2025</span>
-                            <span><i class="fas fa-award"></i> Distinction</span>
+                            <span><i class="far fa-calendar-alt"></i> 2026</span>
+                            <span><i class="fas fa-award"></i> Professional</span>
                         </div>
                     </div>
                     <div class="cert-footer">
-                        <a href="#" target="_blank" class="view-cred-btn">View Credential <i class="fas fa-external-link-alt"></i></a>
+                        <a href="#" target="_blank" class="view-cred-btn">View Credential <i
+                                class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
             </div>
@@ -596,13 +611,32 @@
 
     <div id="projects" class="projects-section">
         <div class="wrapper-title" data-aos="fade-up">Projects</div>
-        <div class="wrapper-desc" data-aos="fade-up">I have worked on a wide range of projects. Here are some of my top projects.</div>
+        <div class="wrapper-desc" data-aos="fade-up">I have worked on a wide range of projects. Here are some of my top
+            projects.</div>
 
         <div class="carousel-container" data-aos="fade-up">
             <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
             <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
 
             <div class="carousel-track">
+                <!-- Project 0: LeadsApp -->
+                <div class="carousel-item">
+                    <div class="project-card">
+                        <img class="project-image"
+                            src="https://i.ibb.co/rBmstn5/Chat-GPT-Image-Jul-12-2026-02-47-50-AM.png" alt=" LeadsApp">
+                        <div class="project-tags">
+                            <span class="tag">ASP.NET</span>
+                            <span class="tag">React</span>
+                        </div>
+                        <div class="project-title">LeadsApp</div>
+                        <div class="project-description">A leads manager and rerouting application using ASP.NET
+                            WebForms, .NET Core API, React frontend, and Hangfire for management. Features external DB
+                            API fetching.</div>
+                        <div class="project-actions">
+                            <a href="https://leadsapp.jhytechs.com/" target="_blank" class="project-btn">Live App</a>
+                        </div>
+                    </div>
+                </div>
                 <!-- Project 1: Jaidad -->
                 <div class="carousel-item">
                     <div class="project-card">
@@ -614,7 +648,8 @@
                             <span class="tag">ASP.NET</span>
                         </div>
                         <div class="project-title">Jaidad.com</div>
-                        <div class="project-description">A complete real estate portal with multi-role authentication, advanced property search filters, and a real-time chat system.</div>
+                        <div class="project-description">A complete real estate portal with multi-role authentication,
+                            advanced property search filters, and a real-time chat system.</div>
                         <div class="project-actions">
                             <a href="http://jaidad.tryasp.net/" target="_blank" class="project-btn">Live App</a>
                         </div>
@@ -630,7 +665,8 @@
                             <span class="tag">API</span>
                         </div>
                         <div class="project-title">AgentSync Dashboard</div>
-                        <div class="project-description">A real-time performance dashboard featuring live activity logs, performance overviews, and comprehensive data visualization.</div>
+                        <div class="project-description">A real-time performance dashboard featuring live activity logs,
+                            performance overviews, and comprehensive data visualization.</div>
                         <div class="project-actions">
                             <a href="http://agentsync.runasp.net/" target="_blank" class="project-btn">Live App</a>
                         </div>
@@ -648,7 +684,8 @@
                             <span class="tag">AI</span>
                         </div>
                         <div class="project-title">LMS System with AI</div>
-                        <div class="project-description">Learning Management System featuring AI content suggestions, student progress tracking, and secure Google Login.</div>
+                        <div class="project-description">Learning Management System featuring AI content suggestions,
+                            student progress tracking, and secure Google Login.</div>
                         <div class="project-actions">
                             <a href="https://lmssystem.tryasp.net/" target="_blank" class="project-btn">Live App</a>
                         </div>
@@ -666,7 +703,8 @@
                             <span class="tag">Dubai</span>
                         </div>
                         <div class="project-title">IWT UAE</div>
-                        <div class="project-description">Premium automotive services platform for window tinting, PPF, and ceramic coating based in Al Quoz, Dubai.</div>
+                        <div class="project-description">Premium automotive services platform for window tinting, PPF,
+                            and ceramic coating based in Al Quoz, Dubai.</div>
                         <div class="project-actions">
                             <a href="https://iwtuae.com/" target="_blank" class="project-btn">Live App</a>
                         </div>
@@ -684,7 +722,8 @@
                             <span class="tag">Insurance</span>
                         </div>
                         <div class="project-title">LeadsStack.us</div>
-                        <div class="project-description">Insurance marketplace platform connecting clients with carriers for Auto, Home, and Health insurance leads.</div>
+                        <div class="project-description">Insurance marketplace platform connecting clients with carriers
+                            for Auto, Home, and Health insurance leads.</div>
                         <div class="project-actions">
                             <a href="https://leadsstack.us/" target="_blank" class="project-btn">Live App</a>
                         </div>
@@ -702,7 +741,8 @@
                             <span class="tag">Lead Capture</span>
                         </div>
                         <div class="project-title">Viva Leads</div>
-                        <div class="project-description">Professional service connector for home improvement, simplifying the search for solar and roofing pros.</div>
+                        <div class="project-description">Professional service connector for home improvement,
+                            simplifying the search for solar and roofing pros.</div>
                         <div class="project-actions">
                             <a href="https://viva-leads.com/" target="_blank" class="project-btn">Live App</a>
                         </div>
@@ -747,7 +787,8 @@
                 <div class="social-btn">Follow Me</div>
             </a>
 
-            <a href="https://www.linkedin.com/in/muneebrehman006/" target="_blank" class="social-card" data-aos="fade-up" data-aos-delay="300">
+            <a href="https://www.linkedin.com/in/muneebrehman006/" target="_blank" class="social-card"
+                data-aos="fade-up" data-aos-delay="300">
                 <div class="social-icon-wrapper brand-linkedin">
                     <i class="fab fa-linkedin"></i>
                 </div>
@@ -774,7 +815,7 @@
 
     <div id="contact" class="contact-section">
         <div class="mesh-gradient"></div>
-        
+
         <div class="contact-wrapper" data-aos="zoom-in">
             <div class="contact-header">
                 <h2 class="contact-main-title">Get in Touch</h2>
@@ -790,7 +831,7 @@
                             <a href="mailto:muneeb.rehman1754@gmail.com">muneeb.rehman1754@gmail.com</a>
                         </div>
                     </div>
-                    
+
                     <div class="info-card" data-aos="fade-right" data-aos-delay="200">
                         <div class="info-icon"><i class="fab fa-linkedin"></i></div>
                         <div class="info-details">
@@ -811,7 +852,7 @@
                 <div class="contact-form-panel">
                     <form action="https://api.web3forms.com/submit" method="POST" class="modern-form">
                         <input type="hidden" name="access_key" value="fb0a0b88-68de-4051-ac56-e31e71a03be2">
-                        
+
                         <div class="input-group">
                             <input type="text" name="name" required placeholder=" ">
                             <label>Full Name</label>

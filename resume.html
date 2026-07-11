@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Muneeb Ur Rehman - Resume</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 40px;
+            background-color: #fff;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 0;
+            color: #1a1a1a;
+        }
+
+        h2 {
+            font-size: 1.4em;
+            color: #854CE6;
+            border-bottom: 2px solid #854CE6;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        .summary {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #444;
+        }
+
+        .experience-item,
+        .project-item,
+        .education-item {
+            margin-top: 15px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .item-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #222;
+        }
+
+        .item-subtitle {
+            font-style: italic;
+            color: #666;
+        }
+
+        .item-date {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        ul {
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .skill-category {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Muneeb Ur Rehman</h1>
+        <div style="font-size: 1.2em; color: #555; margin-top: 5px;">Backend Developer (.NET Core & SQL Server)</div>
+        <div class="contact-info">
+            <span>muneeb.rehman1754@gmail.com</span> |
+            <span>linkedin.com/in/muneebrehman006</span> |
+            <span>github.com/</span>
+        </div>
+    </header>
+
+    <div class="summary">
+        I build robust, scalable backends using <strong>.NET Core</strong> and <strong>SQL Server</strong>. Transforming
+        complex data into clean, secure, and high-performance APIs for web and Desktop apps. Highly experienced with
+        call center API integrations and lead distribution systems.
+    </div>
+
+    <section>
+        <h2>Experience</h2>
+        <div class="experience-item">
+            <div class="item-header">
+                <span class="item-title">Freelance Backend Developer</span>
+                <span class="item-date">Jan 2023 - Present</span>
+            </div>
+            <div class="item-subtitle">Self-Employed | Remote</div>
+            <ul>
+                <li>Architecting scalable APIs using <strong>.NET 8</strong> and C#.</li>
+                <li>Designing normalized database schemas in <strong>SQL Server</strong>.</li>
+                <li>Integrating secure <strong>JWT Authentication</strong> and 3rd party payments (Stripe).</li>
+                <li>Integrating call center campaigns (Ringba, LeadProsper) processing 100K+ API requests.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="item-header">
+                <span class="item-title">Open Source Contributor</span>
+                <span class="item-date">2022 - 2023</span>
+            </div>
+            <div class="item-subtitle">GitHub Community</div>
+            <ul>
+                <li>Contributed documentation and bug fixes to .NET repositories.</li>
+                <li>Built initial portfolio of 10+ console applications to master C# logic.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div><span class="skill-category">Backend:</span> C#, .NET Core 8, ASP.NET API, MVC Architecture, JWT Auth,
+                SignalR</div>
+            <div><span class="skill-category">Database & Cloud:</span> SQL Server, Entity Framework, LINQ, Azure Basics
+            </div>
+            <div><span class="skill-category">Tools & DevOps:</span> Git, GitHub, Docker (Basic), Visual Studio, FileZilla, Hostbreak</div>
+            <div><span class="skill-category">Other:</span> REST API, HTML/CSS, JavaScript, React.js</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Key Projects</h2>
+        <div class="project-item">
+            <div class="item-header"><span class="item-title">LeadsApp (Leads Manager & Rerouting)</span></div>
+            <div class="item-subtitle">ASP.NET WebForms, .NET Core API, React</div>
+            <ul>
+                <li>A complete leads manager and rerouting web application with a React frontend.</li>
+                <li>Utilized Hangfire for management and integrated APIs for fetching leads from external databases.
+                </li>
+            </ul>
+        </div>
+        <div class="project-item">
+            <div class="item-header"><span class="item-title">Jaidad.com</span></div>
+            <div class="item-subtitle">C#, ASP.NET</div>
+            <ul>
+                <li>A complete real estate portal with multi-role authentication, advanced property search filters, and
+                    a real-time chat system.</li>
+            </ul>
+        </div>
+        <div class="project-item">
+            <div class="item-header"><span class="item-title">AgentSync Dashboard</span></div>
+            <div class="item-subtitle">API, Dashboard</div>
+            <ul>
+                <li>A real-time performance dashboard featuring live activity logs, performance overviews, and
+                    comprehensive data visualization.</li>
+            </ul>
+        </div>
+        <div class="project-item">
+            <div class="item-header"><span class="item-title">LMS System with AI</span></div>
+            <div class="item-subtitle">.NET Core, AI</div>
+            <ul>
+                <li>Learning Management System featuring AI content suggestions, student progress tracking, and secure
+                    Google Login.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+        <div class="education-item">
+            <div class="item-header">
+                <span class="item-title">BS Computer Science</span>
+                <span class="item-date">2026 - 2030 (Expected)</span>
+            </div>
+            <div class="item-subtitle">Virtual University of Pakistan</div>
+            <ul>
+                <li>Focusing on Data Structures, Algorithms, and System Design.</li>
+                <li>Lead Developer for the university LMS project.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Certifications</h2>
+        <ul>
+            <li><strong>JavaScript Expert</strong> & <strong>IT Specialist</strong> - Certiport (2026)</li>
+            <li><strong>.NET, C#, SQL</strong> - JHY Techs (2025-2026)</li>
+            <li><strong>Full Stack Web Development</strong>(2022-2026)</li>
+            <li><strong>Projects Management </strong> - FFH Lahore (2026)</li>
+
+        </ul>
+    </section>
+
+</body>
+
+</html>

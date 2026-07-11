@@ -342,3 +342,42 @@ document.addEventListener('DOMContentLoaded', () => {
         next();
     }
 });
+
+// Resume Download Button Animation Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const resumeBtn = document.getElementById('resume-download-btn');
+    const resumeLoader = document.getElementById('resume-loader');
+    
+    if (resumeBtn && resumeLoader) {
+        const btnText = resumeBtn.querySelector('.btn-text');
+        
+        resumeBtn.addEventListener('click', (e) => {
+            // Check if it's already loading
+            if (resumeBtn.classList.contains('is-loading')) {
+                e.preventDefault();
+                return;
+            }
+            
+            e.preventDefault();
+            resumeBtn.classList.add('is-loading');
+            
+            // Disable pointer events
+            resumeBtn.style.pointerEvents = 'none';
+
+            // Simulate loading time before download (1.5 seconds)
+            setTimeout(() => {
+                // Trigger actual download
+                const link = document.createElement('a');
+                link.href = 'Muneeb_Rehman_Resume.pdf';
+                link.download = 'Muneeb_Rehman_Resume.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                // Restore button state
+                resumeBtn.classList.remove('is-loading');
+                resumeBtn.style.pointerEvents = 'auto';
+            }, 1500);
+        });
+    }
+});
