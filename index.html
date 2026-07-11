@@ -1501,6 +1501,64 @@
         </div>
     </div>
 
+    <!-- GSAP Curve Swipe Overlay -->
+    <div class="curve-overlay" id="curveMenuOverlay">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path class="curve-path" d="M 0 100 V 100 Q 50 100 100 100 V 100 z" />
+        </svg>
+        <div class="curve-close-btn">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="curve-content">
+            <div class="curve-content-icon">
+                <i class="fa-solid fa-rocket"></i>
+            </div>
+            <h2>Section Title</h2>
+            <p>Section subtitle description here.</p>
+            <button class="open-section-btn" data-target="#home">Open Section</button>
+        </div>
+    </div>
+
+    <!-- macOS Dock -->
+    <div class="mac-dock-container">
+        <nav class="mac-dock">
+            <div class="dock-icon" data-tooltip="Build" data-target="#build">
+                <i class="fa-solid fa-tools"></i>
+            </div>
+            <div class="dock-icon" data-tooltip="Architecture" data-target="#architecture">
+                <i class="fa-solid fa-server"></i>
+            </div>
+            <div class="dock-icon" data-tooltip="Process" data-target="#process">
+                <i class="fa-solid fa-spinner"></i>
+            </div>
+            <div class="dock-icon" data-tooltip="My Journey" data-target="#experience-new">
+                <i class="fa-solid fa-route"></i>
+            </div>
+            <div class="dock-icon" data-tooltip="Different" data-target="#different">
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="dock-icon" data-tooltip="Favorites" data-target="#favorites">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="dock-icon" data-tooltip="GitHub" data-target="#github">
+                <i class="fa-brands fa-github"></i>
+            </div>
+            <div class="dock-icon" data-tooltip="Services" data-target="#services">
+                <i class="fa-solid fa-gear"></i>
+            </div>
+            <div class="dock-icon" data-tooltip="Impact" data-target="#impact">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Dock & Curve Navigation Resources -->
+    <link rel="stylesheet" href="css/dock.css">
+    <link rel="stylesheet" href="css/curve-menu.css">
+    <script defer src="js/dock.js"></script>
+    <script defer src="js/curve-menu.js"></script>
+    <script defer src="js/navigation-controller.js"></script>
+
 </body>
 
 </html>

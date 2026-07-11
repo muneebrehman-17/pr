@@ -1,0 +1,129 @@
+/* macOS Dock Style */
+.mac-dock-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    pointer-events: none; /* Let clicks pass through empty areas */
+}
+
+.mac-dock {
+    display: flex;
+    padding: 10px;
+    gap: 25px;
+    background: rgba(30, 30, 30, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    pointer-events: auto; /* Re-enable for the dock itself */
+    align-items: flex-end;
+}
+
+.dock-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: rgba(40, 40, 40, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color, #fff);
+    font-size: 24px;
+    cursor: pointer;
+    /* transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1); GSAP handles transform */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    transform-origin: bottom center;
+    will-change: transform;
+    position: relative;
+}
+
+.dock-icon:hover {
+    background: rgba(60, 60, 60, 0.9);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Tooltip */
+.dock-icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, transform 0.2s;
+    white-space: nowrap;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dock-icon:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+/* Active Indicator */
+.dock-icon::before {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--primary-color, #00ffcc);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dock-icon.active::before {
+    opacity: 1;
+    box-shadow: 0 0 5px var(--primary-color, #00ffcc);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dock-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    .mac-dock {
+        padding: 8px;
+        gap: 8px;
+        border-radius: 16px;
+    }
+    .mac-dock-container {
+        bottom: 10px;
+        width: 95%;
+        max-width: 100%;
+        overflow-x: auto;
+        justify-content: flex-start; /* allow scroll if too many */
+    }
+    /* Hide scrollbar for mobile dock */
+    .mac-dock-container::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+
+
+
+
+
+/* TPORARILY HIDE DOCK FOR COMMIT */
+.mac-dock-container { display: none !important; }
+
