@@ -3,7 +3,7 @@
     position: fixed;
     bottom: 120px; /* Distance above whatsapp */
     right: 40px;
-    z-index: 2147483647;
+    z-index: 2147483640;
     display: flex;
     flex-direction: column;
     align-items: flex-end;

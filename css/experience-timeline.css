@@ -1,0 +1,164 @@
+/* css/experience-timeline.css */
+.experience-new-section {
+    padding: 100px 20px;
+    background: var(--bg-color);
+    text-align: center;
+}
+
+.exp-timeline-container {
+    max-width: 800px;
+    margin: 40px auto 0;
+    position: relative;
+    padding: 0;
+}
+
+/* Remove the static center line */
+.exp-timeline-container::before {
+    display: none;
+}
+
+.exp-step {
+    width: 50%;
+    position: relative;
+    margin-bottom: 0;
+    padding-bottom: 40px; /* Space for the vertical line segment */
+    opacity: 0; /* Wait until active to show */
+    transition: opacity 0.3s ease;
+    transition-delay: var(--delay, 0s);
+}
+
+.exp-step.active {
+    opacity: 1;
+}
+
+/* Left side items (odd) */
+.exp-step:nth-child(odd) {
+    left: 0;
+    text-align: right;
+    padding-right: 40px;
+}
+
+/* Right side items (even) */
+.exp-step:nth-child(even) {
+    left: 50%;
+    text-align: left;
+    padding-left: 40px;
+}
+
+/* The vertical line segment that draws downwards */
+.exp-step::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 4px;
+    height: 0%; /* starts empty */
+    background: var(--primary-color);
+    transition: height 0.4s linear;
+    /* Line draws right after the step appears */
+    transition-delay: calc(var(--delay, 0s) + 0.2s);
+}
+
+.exp-step:nth-child(odd)::before {
+    right: -2px; /* Centered on the boundary */
+}
+
+.exp-step:nth-child(even)::before {
+    left: -2px; /* Centered on the boundary */
+}
+
+/* When active, draw the line to 100% */
+.exp-step.active::before {
+    height: 100%;
+}
+
+.exp-step:last-child::before {
+    display: none;
+}
+
+/* The Dots */
+.exp-dot {
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: var(--card-color);
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.exp-step:nth-child(odd) .exp-dot {
+    right: -10px;
+}
+
+.exp-step:nth-child(even) .exp-dot {
+    left: -10px;
+}
+
+.exp-dot.current {
+    background: var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+.exp-step:hover .exp-dot {
+    transform: scale(1.3);
+    background: var(--primary-color);
+}
+
+/* Content Box */
+.exp-content {
+    background: var(--card-color);
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.3s ease;
+    opacity: 0; /* Let Animate.css handle opacity */
+}
+
+.exp-step.active .exp-content {
+    /* Once Animate.css runs, it leaves opacity at 1 */
+    opacity: 1; 
+}
+
+.exp-step:hover .exp-content {
+    box-shadow: 0 10px 20px rgba(133, 76, 230, 0.15);
+}
+
+.exp-date {
+    display: inline-block;
+    padding: 4px 10px;
+    background: rgba(133, 76, 230, 0.1);
+    color: var(--primary-color);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.exp-content h4 {
+    font-size: 1.1rem;
+    color: var(--text-white);
+    margin: 0;
+}
+
+/* Mobile Fallback: Make it left-aligned again */
+@media (max-width: 768px) {
+    .exp-step {
+        width: 100%;
+    }
+    .exp-step:nth-child(odd), .exp-step:nth-child(even) {
+        left: 0;
+        text-align: left;
+        padding-left: 40px;
+        padding-right: 0;
+    }
+    .exp-step:nth-child(odd)::before, .exp-step:nth-child(even)::before {
+        left: 9px; /* Centered under the dot */
+        right: auto;
+    }
+    .exp-step:nth-child(odd) .exp-dot, .exp-step:nth-child(even) .exp-dot {
+        left: 0;
+        right: auto;
+    }
+}

@@ -1,0 +1,107 @@
+/* css/github.css */
+.github-section {
+    padding: 100px 20px;
+    background: #0a0a0a; /* Slightly darker to make cards pop */
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.github-section .section-title, .github-section .section-subtitle { color: #fff; }
+
+.github-grid {
+    max-width: 95%;
+    margin: 60px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.github-card {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: left;
+    
+    /* Animation base state */
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Make the first card span both columns for the wide contribution graph */
+.github-card:nth-child(1) {
+    grid-column: span 2;
+    transition-delay: 0.1s;
+}
+
+.github-card:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+.github-card:nth-child(3) {
+    transition-delay: 0.5s;
+}
+
+.github-card.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.github-card:hover {
+    transform: translateY(-10px) scale(1.02) !important;
+    background: rgba(133, 76, 230, 0.08);
+    border-color: rgba(133, 76, 230, 0.3);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(133, 76, 230, 0.1);
+}
+
+.github-card h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.github-card h3 i {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    filter: drop-shadow(0 0 8px rgba(133, 76, 230, 0.5));
+}
+
+.gh-placeholder {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.2);
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.02);
+}
+
+.gh-placeholder img {
+    transition: transform 0.4s ease;
+}
+
+.github-card:hover .gh-placeholder img {
+    transform: scale(1.03);
+}
+
+@media (max-width: 800px) {
+    .github-grid {
+        grid-template-columns: 1fr;
+    }
+    .github-card:nth-child(1) {
+        grid-column: span 1;
+    }
+}
+

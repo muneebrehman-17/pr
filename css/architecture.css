@@ -1,0 +1,78 @@
+/* css/architecture.css */
+.architecture-section {
+    padding: 100px 20px;
+    background: #0e100f;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.arch-timeline {
+    max-width: 900px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.arch-box {
+    background: rgba(133, 76, 230, 0.1);
+    border: 1px solid var(--primary-color);
+    padding: 20px 30px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    min-width: 150px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.arch-box:hover {
+    background: var(--primary-color);
+    transform: scale(1.1) !important; /* overrides JS transform */
+    box-shadow: 0 0 20px var(--primary-color);
+}
+
+.arch-box i {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.arch-box span {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.arch-line {
+    width: 40px;
+    height: 3px;
+    background: var(--primary-color);
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.5s ease;
+}
+
+/* For mobile responsive layout */
+@media (max-width: 768px) {
+    .arch-timeline {
+        flex-direction: column;
+    }
+    .arch-line {
+        width: 3px;
+        height: 40px;
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+}
+
+.architecture-section .section-title, .architecture-section .section-subtitle { color: #fff; }
+

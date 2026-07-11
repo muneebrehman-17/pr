@@ -1,0 +1,48 @@
+/* css/numbers.css */
+.numbers-section {
+    padding: 80px 20px;
+    background: var(--card-color);
+}
+
+.numbers-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.number-card {
+    flex: 1;
+    min-width: 180px;
+    text-align: center;
+    padding: 30px;
+    background: var(--bg-color);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.number-card:hover {
+    transform: translateY(-10px);
+}
+
+.number-card h3 {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.number-card h3::after {
+    content: '+';
+    font-size: 2.5rem;
+    vertical-align: top;
+}
+
+.number-card p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}

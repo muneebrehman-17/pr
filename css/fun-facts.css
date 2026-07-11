@@ -1,0 +1,59 @@
+/* css/fun-facts.css */
+.fun-facts-section {
+    padding: 100px 20px;
+    background: var(--card-color);
+    text-align: center;
+}
+
+.facts-grid {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.fact-card {
+    flex: 1;
+    min-width: 200px;
+    background: var(--bg-color);
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(133, 76, 230, 0.15);
+}
+
+.fact-emoji {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+.fact-card h3 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.fact-card h3::after {
+    content: '+';
+    font-size: 1.5rem;
+    vertical-align: top;
+}
+
+.fact-card h3:contains('∞')::after {
+    display: none;
+}
+
+.fact-card p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}

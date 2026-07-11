@@ -12,7 +12,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sys-arch.css">
     <link rel="stylesheet" href="marquee.css">
     <link rel="stylesheet" href="progress.css">
     <link rel="stylesheet" href="certifications.css">
@@ -21,9 +23,33 @@
     <link rel="stylesheet" href="whatsapp.css">
     <link rel="stylesheet" href="assistant.css">
     <script defer src="script.js"></script>
+    <script defer src="sys-arch.js"></script>
     <script defer src="carousel.js"></script>
     <script defer src="assistant.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
+<!-- New Premium Sections CSS -->
+<link rel="stylesheet" href="css/featured-project.css">
+<link rel="stylesheet" href="css/numbers.css">
+<link rel="stylesheet" href="css/build.css">
+<link rel="stylesheet" href="css/architecture.css">
+<link rel="stylesheet" href="css/process-timeline.css">
+<link rel="stylesheet" href="css/experience-timeline.css">
+<link rel="stylesheet" href="css/different.css">
+<link rel="stylesheet" href="css/fun-facts.css">
+<link rel="stylesheet" href="css/favorites.css">
+<link rel="stylesheet" href="css/github.css">
+<link rel="stylesheet" href="css/services.css">
+<link rel="stylesheet" href="css/impact.css">
+<!-- New Premium Sections JS -->
+<script defer src="js/animations.js"></script>
+<script defer src="js/featured-project.js"></script>
+<script defer src="js/numbers.js"></script>
+<script defer src="js/architecture.js"></script>
+<script defer src="js/fun-facts.js"></script>
+<script defer src="js/github.js"></script>
+<script defer src="js/process-timeline.js"></script>
+<script defer src="js/experience-timeline.js"></script>
 
 <body>
     <div id="preloader">
@@ -760,6 +786,484 @@
 
     <!-- Find me Online Section  -->
 
+    <!-- PREMIUM SECTION 1: Featured Project -->
+    <!--
+    <div id="featured-project" class="featured-project-section reveal-up">
+        <div class="fp-container">
+            <h2 class="fp-title">Featured Project</h2>
+            <h3 class="fp-project-name">Lead Distribution Platform</h3>
+            <p class="fp-desc">A highly scalable backend system for routing and distributing leads in real-time to the highest bidding buyers with full retry mechanisms.</p>
+            
+            <div class="fp-architecture-flow">
+                <div class="fp-flow-node fade-in-stagger">Client</div>
+                <div class="fp-flow-arrow fade-in-stagger"><i class="fas fa-arrow-down"></i></div>
+                <div class="fp-flow-node fade-in-stagger">REST API</div>
+                <div class="fp-flow-arrow fade-in-stagger"><i class="fas fa-arrow-down"></i></div>
+                <div class="fp-flow-node fade-in-stagger">Save Lead</div>
+                <div class="fp-flow-arrow fade-in-stagger"><i class="fas fa-arrow-down"></i></div>
+                <div class="fp-flow-node fade-in-stagger">Hangfire Queue</div>
+                <div class="fp-flow-arrow fade-in-stagger"><i class="fas fa-arrow-down"></i></div>
+                <div class="fp-flow-node fade-in-stagger">Ping Buyers</div>
+                <div class="fp-flow-arrow fade-in-stagger"><i class="fas fa-arrow-down"></i></div>
+                <div class="fp-flow-node fade-in-stagger">Highest Bid</div>
+                <div class="fp-flow-arrow fade-in-stagger"><i class="fas fa-arrow-down"></i></div>
+                <div class="fp-flow-node fade-in-stagger">Post Lead</div>
+                <div class="fp-flow-arrow fade-in-stagger"><i class="fas fa-arrow-down"></i></div>
+                <div class="fp-flow-node fade-in-stagger">Reports Dashboard</div>
+            </div>
+        </div>
+    </div>
+    -->
+    <!-- PREMIUM SECTION 2: By The Numbers -->
+    <div id="numbers" class="numbers-section reveal-up">
+        <div class="numbers-container">
+            <div class="number-card">
+                <h3 class="count-up" data-target="15">0</h3>
+                <p>Projects Completed</p>
+            </div>
+            <div class="number-card">
+                <h3 class="count-up" data-target="40">0</h3>
+                <p>REST APIs Built</p>
+            </div>
+            <div class="number-card">
+                <h3 class="count-up" data-target="100000">0</h3>
+                <p>Lead Records Processed</p>
+            </div>
+            <div class="number-card">
+                <h3 class="count-up" data-target="30">0</h3>
+                <p>API Integrations</p>
+            </div>
+            <div class="number-card">
+                <h3 class="count-up" data-target="5">0</h3>
+                <p>Production Systems</p>
+            </div>
+        </div>
+    </div>
+    <!-- PREMIUM SECTION 3: What I Can Build -->
+    <div id="build" class="build-section reveal-up">
+        <div class="section-header">
+            <h2 class="section-title">What I Can Build</h2>
+            <p class="section-subtitle">Scalable, secure, and high-performance solutions tailored to business needs.</p>
+        </div>
+        <div class="build-grid">
+            <div class="build-card fade-in-stagger">
+                <i class="fas fa-users-cog"></i>
+                <h3>CRM Systems</h3>
+                <p>Custom customer relationship management tools.</p>
+            </div>
+            <div class="build-card fade-in-stagger">
+                <i class="fas fa-chart-bar"></i>
+                <h3>Admin Dashboards</h3>
+                <p>Comprehensive admin panels with data visualization.</p>
+            </div>
+            <div class="build-card fade-in-stagger">
+                <i class="fas fa-route"></i>
+                <h3>Lead Distribution</h3>
+                <p>Intelligent routing algorithms for lead management.</p>
+            </div>
+            <div class="build-card fade-in-stagger">
+                <i class="fas fa-exchange-alt"></i>
+                <h3>REST APIs</h3>
+                <p>Robust, secure, and scalable backend APIs.</p>
+            </div>
+            <div class="build-card fade-in-stagger">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Authentication Systems</h3>
+                <p>Secure login with JWT and role-based access.</p>
+            </div>
+            <div class="build-card fade-in-stagger">
+                <i class="fas fa-database"></i>
+                <h3>SQL Databases</h3>
+                <p>Optimized relational database schemas.</p>
+            </div>
+            <div class="build-card fade-in-stagger">
+                <i class="fas fa-plug"></i>
+                <h3>Third-party Integration</h3>
+                <p>Seamless connections with external services.</p>
+            </div>
+            <div class="build-card fade-in-stagger">
+                <i class="fas fa-file-invoice-dollar"></i>
+                <h3>Reporting Dashboards</h3>
+                <p>Dynamic reports and data export tools.</p>
+            </div>
+            <div class="build-card fade-in-stagger">
+                <i class="fas fa-bolt"></i>
+                <h3>Real-time Applications</h3>
+                <p>Live updates using SignalR/WebSockets.</p>
+            </div>
+            <div class="build-card fade-in-stagger">
+                <i class="fas fa-layer-group"></i>
+                <h3>Full Stack Web Apps</h3>
+                <p>End-to-end development from database to UI.</p>
+            </div>
+        </div>
+    </div>
+    <!-- PREMIUM SECTION 4: Backend Architecture -->
+    <div id="architecture" class="architecture-section" data-aos="fade-in">
+        <div class="section-header">
+            <h2 class="section-title">Backend Architecture</h2>
+            <p class="section-subtitle">Scalable data flow and processing pipelines.</p>
+        </div>
+        <div class="arch-timeline">
+            <div class="arch-box arch-stagger">
+                <i class="fas fa-desktop"></i>
+                <span>Frontend</span>
+            </div>
+            <div class="arch-line arch-stagger"></div>
+            <div class="arch-box arch-stagger">
+                <i class="fas fa-exchange-alt"></i>
+                <span>REST API</span>
+            </div>
+            <div class="arch-line arch-stagger"></div>
+            <div class="arch-box arch-stagger">
+                <i class="fas fa-lock"></i>
+                <span>Authentication</span>
+            </div>
+            <div class="arch-line arch-stagger"></div>
+            <div class="arch-box arch-stagger">
+                <i class="fas fa-cogs"></i>
+                <span>Business Logic</span>
+            </div>
+            <div class="arch-line arch-stagger"></div>
+            <div class="arch-box arch-stagger">
+                <i class="fas fa-database"></i>
+                <span>Database</span>
+            </div>
+            <div class="arch-line arch-stagger"></div>
+            <div class="arch-box arch-stagger">
+                <i class="fas fa-network-wired"></i>
+                <span>Background Workers</span>
+            </div>
+            <div class="arch-line arch-stagger"></div>
+            <div class="arch-box arch-stagger">
+                <i class="fas fa-cloud"></i>
+                <span>External APIs</span>
+            </div>
+        </div>
+    </div>
+    <!-- PREMIUM SECTION 5: Development Process Timeline -->
+    <div id="process" class="process-section reveal-up">
+        <div class="section-header">
+            <h2 class="section-title">Development Process</h2>
+            <p class="section-subtitle">A structured approach to building reliable systems.</p>
+        </div>
+        <div class="process-timeline">
+            <div class="process-step fade-in-stagger">
+                <div class="step-icon"><i class="fas fa-clipboard-list"></i></div>
+                <h4>Requirement Analysis</h4>
+            </div>
+            <div class="process-step fade-in-stagger">
+                <div class="step-icon"><i class="fas fa-database"></i></div>
+                <h4>Database Design</h4>
+            </div>
+            <div class="process-step fade-in-stagger">
+                <div class="step-icon"><i class="fas fa-code"></i></div>
+                <h4>API Development</h4>
+            </div>
+            <div class="process-step fade-in-stagger">
+                <div class="step-icon"><i class="fas fa-lock"></i></div>
+                <h4>Authentication</h4>
+            </div>
+            <div class="process-step fade-in-stagger">
+                <div class="step-icon"><i class="fas fa-cogs"></i></div>
+                <h4>Background Processing</h4>
+            </div>
+            <div class="process-step fade-in-stagger">
+                <div class="step-icon"><i class="fas fa-laptop-code"></i></div>
+                <h4>Frontend Integration</h4>
+            </div>
+            <div class="process-step fade-in-stagger">
+                <div class="step-icon"><i class="fas fa-vial"></i></div>
+                <h4>Testing</h4>
+            </div>
+            <div class="process-step fade-in-stagger">
+                <div class="step-icon"><i class="fas fa-rocket"></i></div>
+                <h4>Deployment</h4>
+            </div>
+        </div>
+    </div>
+    <!-- PREMIUM SECTION 6: Experience Timeline -->
+    <div id="experience-new" class="experience-new-section reveal-up">
+        <div class="section-header">
+            <h2 class="section-title">My Journey</h2>
+            <p class="section-subtitle">A chronological track of my growth and tech stack.</p>
+        </div>
+        <div class="exp-timeline-container">
+            <div class="exp-step fade-in-stagger">
+                <div class="exp-dot"></div>
+                <div class="exp-content">
+                    <span class="exp-date">2023</span>
+                    <h4>Started Software Engineering</h4>
+                </div>
+            </div>
+            <div class="exp-step fade-in-stagger">
+                <div class="exp-dot"></div>
+                <div class="exp-content">
+                    <h4>HTML, CSS, JavaScript</h4>
+                </div>
+            </div>
+            <div class="exp-step fade-in-stagger">
+                <div class="exp-dot"></div>
+                <div class="exp-content">
+                    <h4>ASP.NET WebForms</h4>
+                </div>
+            </div>
+            <div class="exp-step fade-in-stagger">
+                <div class="exp-dot"></div>
+                <div class="exp-content">
+                    <h4>SQL Server</h4>
+                </div>
+            </div>
+            <div class="exp-step fade-in-stagger">
+                <div class="exp-dot"></div>
+                <div class="exp-content">
+                    <h4>REST APIs</h4>
+                </div>
+            </div>
+            <div class="exp-step fade-in-stagger">
+                <div class="exp-dot"></div>
+                <div class="exp-content">
+                    <h4>Lead Distribution Systems</h4>
+                </div>
+            </div>
+            <div class="exp-step fade-in-stagger">
+                <div class="exp-dot"></div>
+                <div class="exp-content">
+                    <h4>React</h4>
+                </div>
+            </div>
+            <div class="exp-step fade-in-stagger">
+                <div class="exp-dot"></div>
+                <div class="exp-content">
+                    <h4>Supabase</h4>
+                </div>
+            </div>
+            <div class="exp-step fade-in-stagger">
+                <div class="exp-dot current"></div>
+                <div class="exp-content">
+                    <span class="exp-date">Currently Learning</span>
+                    <h4>System Design, Docker, Redis, Microservices</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- PREMIUM SECTION 7: What Makes Me Different -->
+    <div id="different" class="different-section" data-aos="fade-in">
+        <div class="section-header">
+            <h2 class="section-title">What Makes Me Different</h2>
+            <p class="section-subtitle">Core principles that drive my work.</p>
+        </div>
+        <div class="different-grid">
+            <div class="diff-card glassmorphism fade-in-stagger">
+                <i class="fas fa-brain"></i>
+                <h3>Problem Solver</h3>
+            </div>
+            <div class="diff-card glassmorphism fade-in-stagger">
+                <i class="fas fa-bolt"></i>
+                <h3>Fast Learner</h3>
+            </div>
+            <div class="diff-card glassmorphism fade-in-stagger">
+                <i class="fas fa-code"></i>
+                <h3>Clean Code</h3>
+            </div>
+            <div class="diff-card glassmorphism fade-in-stagger">
+                <i class="fas fa-server"></i>
+                <h3>Backend Focused</h3>
+            </div>
+            <div class="diff-card glassmorphism fade-in-stagger">
+                <i class="fas fa-database"></i>
+                <h3>Database Optimization</h3>
+            </div>
+            <div class="diff-card glassmorphism fade-in-stagger">
+                <i class="fas fa-plug"></i>
+                <h3>API Integration Expert</h3>
+            </div>
+            <div class="diff-card glassmorphism fade-in-stagger">
+                <i class="fas fa-tachometer-alt"></i>
+                <h3>Performance First</h3>
+            </div>
+            <div class="diff-card glassmorphism fade-in-stagger">
+                <i class="fas fa-project-diagram"></i>
+                <h3>Scalable Architecture</h3>
+            </div>
+        </div>
+    </div>
+    <!-- PREMIUM SECTION 8: Fun Facts -->
+    <div id="fun-facts" class="fun-facts-section reveal-up">
+        <div class="section-header">
+            <h2 class="section-title">Fun Facts</h2>
+            <p class="section-subtitle">A glimpse into my developer life.</p>
+        </div>
+        <div class="facts-grid">
+            <div class="fact-card">
+                <div class="fact-emoji"><i class="fas fa-coffee" style="color: #6F4E37;"></i></div>
+                <h3 class="fun-count" data-target="850">0</h3>
+                <p>Coffee Consumed</p>
+            </div>
+            <div class="fact-card">
+                <div class="fact-emoji"><i class="fas fa-code" style="color: #1E90FF;"></i></div>
+                <h3 class="fun-count" data-target="250000">0</h3>
+                <p>Lines of Code</p>
+            </div>
+            <div class="fact-card">
+                <div class="fact-emoji"><i class="fas fa-cogs" style="color: #708090;"></i></div>
+                <h3 class="fun-count" data-target="30">0</h3>
+                <p>APIs Integrated</p>
+            </div>
+            <div class="fact-card">
+                <div class="fact-emoji"><i class="fas fa-database" style="color: #FFD700;"></i></div>
+                <h3 class="fun-count" data-target="120">0</h3>
+                <p>Database Tables Designed</p>
+            </div>
+            <div class="fact-card">
+                <div class="fact-emoji"><i class="fas fa-bug" style="color: #DC143C;"></i></div>
+                <h3>&infin;</h3>
+                <p>Bugs Fixed</p>
+            </div>
+        </div>
+    </div>
+    <!-- PREMIUM SECTION 9: Favorite Technologies -->
+    <div id="favorites" class="favorites-section reveal-up">
+        <div class="section-header">
+            <h2 class="section-title">Favorite Technologies</h2>
+            <p class="section-subtitle">My go-to tools for building scalable applications.</p>
+        </div>
+        <div class="favorites-cloud">
+            <div class="fav-badge fade-in-stagger float-anim-1">ASP.NET Core</div>
+            <div class="fav-badge fade-in-stagger float-anim-2">C#</div>
+            <div class="fav-badge fade-in-stagger float-anim-3">SQL Server</div>
+            <div class="fav-badge fade-in-stagger float-anim-1">React</div>
+            <div class="fav-badge fade-in-stagger float-anim-2">Hangfire</div>
+            <div class="fav-badge fade-in-stagger float-anim-3">SignalR</div>
+            <div class="fav-badge fade-in-stagger float-anim-1">Entity Framework</div>
+            <div class="fav-badge fade-in-stagger float-anim-2">Bootstrap</div>
+            <div class="fav-badge fade-in-stagger float-anim-3">Tailwind</div>
+            <div class="fav-badge fade-in-stagger float-anim-1">Git</div>
+            <div class="fav-badge fade-in-stagger float-anim-2">GitHub</div>
+            <div class="fav-badge fade-in-stagger float-anim-3">Postman</div>
+            <div class="fav-badge fade-in-stagger float-anim-1">JWT</div>
+            <div class="fav-badge fade-in-stagger float-anim-2">REST API</div>
+        </div>
+    </div>
+    <!-- PREMIUM SECTION 10: GitHub Activity -->
+    <div id="github" class="github-section" data-aos="fade-in">
+        <div class="section-header">
+            <h2 class="section-title">GitHub Activity</h2>
+            <p class="section-subtitle">Open source contributions and statistics.</p>
+        </div>
+        <div class="github-grid">
+            <div class="github-card fade-in-stagger">
+                <h3><i class="fab fa-github"></i> Contribution Graph</h3>
+                <div class="gh-placeholder">
+                    <img src="https://ghchart.rshah.org/854CE6/muneebrehman-17" alt="GitHub Contributions"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                        style="width: 100%; border-radius: 5px;">
+                    <div class="gh-fallback"
+                        style="display:none; height: 120px; align-items:center; justify-content:center; background:rgba(255,255,255,0.05); border-radius: 10px;">
+                        Loading Contributions...
+                    </div>
+                </div>
+            </div>
+            <div class="github-card fade-in-stagger">
+                <h3><i class="fas fa-fire"></i> GitHub Stats</h3>
+                <div class="gh-placeholder">
+                    <img src="gitactivity.png" alt="GitHub Stats" style="width: 100%; border-radius: 5px;">
+                </div>
+            </div>
+            <div class="github-card fade-in-stagger">
+                <h3><i class="fas fa-code"></i> Top Languages</h3>
+                <div class="gh-placeholder">
+                    <img src="gitactivity.png" alt="Top Languages" style="width: 100%; border-radius: 5px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- PREMIUM SECTION 11: Services -->
+    <div id="services" class="services-section reveal-up">
+        <div class="section-header">
+            <h2 class="section-title">Services</h2>
+            <p class="section-subtitle">What I bring to the table.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card fade-in-stagger">
+                <i class="fas fa-server"></i>
+                <h3>Backend Development</h3>
+                <p>High-performance backend systems architecture and implementation.</p>
+            </div>
+            <div class="service-card fade-in-stagger">
+                <i class="fas fa-exchange-alt"></i>
+                <h3>REST API Development</h3>
+                <p>Secure, well-documented APIs for web and mobile platforms.</p>
+            </div>
+            <div class="service-card fade-in-stagger">
+                <i class="fas fa-chart-line"></i>
+                <h3>Admin Dashboards</h3>
+                <p>Internal tools for business management and analytics.</p>
+            </div>
+            <div class="service-card fade-in-stagger">
+                <i class="fas fa-database"></i>
+                <h3>Database Design</h3>
+                <p>Optimized schemas, indexing, and migration planning.</p>
+            </div>
+            <div class="service-card fade-in-stagger">
+                <i class="fas fa-plug"></i>
+                <h3>API Integration</h3>
+                <p>Connecting your app with payment gateways, CRMs, and more.</p>
+            </div>
+            <div class="service-card fade-in-stagger">
+                <i class="fas fa-tachometer-alt"></i>
+                <h3>Performance Optimization</h3>
+                <p>Profiling and upgrading legacy systems for scale.</p>
+            </div>
+            <div class="service-card fade-in-stagger">
+                <i class="fas fa-layer-group"></i>
+                <h3>Full Stack Development</h3>
+                <p>End-to-end solutions combining robust backends with modern React UIs.</p>
+            </div>
+        </div>
+    </div>
+    <!-- PREMIUM SECTION 12: Project Impact -->
+    <div id="impact" class="impact-section reveal-up">
+        <div class="section-header">
+            <h2 class="section-title">System Impact</h2>
+            <p class="section-subtitle">Delivering scalable, resilient, and high-performance architectures.</p>
+        </div>
+        <div class="impact-grid">
+            <div class="impact-card fade-in-stagger">
+                <i class="fas fa-check-circle"></i>
+                <h4>Async Processing</h4>
+            </div>
+            <div class="impact-card fade-in-stagger">
+                <i class="fas fa-check-circle"></i>
+                <h4>Buyer Routing</h4>
+            </div>
+            <div class="impact-card fade-in-stagger">
+                <i class="fas fa-check-circle"></i>
+                <h4>Retry Mechanism</h4>
+            </div>
+            <div class="impact-card fade-in-stagger">
+                <i class="fas fa-check-circle"></i>
+                <h4>Reporting Dashboard</h4>
+            </div>
+            <div class="impact-card fade-in-stagger">
+                <i class="fas fa-check-circle"></i>
+                <h4>Queue Processing</h4>
+            </div>
+            <div class="impact-card fade-in-stagger">
+                <i class="fas fa-check-circle"></i>
+                <h4>API Integrations</h4>
+            </div>
+            <div class="impact-card fade-in-stagger">
+                <i class="fas fa-check-circle"></i>
+                <h4>Multi-Buyer Support</h4>
+            </div>
+            <div class="impact-card fade-in-stagger">
+                <i class="fas fa-check-circle"></i>
+                <h4>SQL Optimization</h4>
+            </div>
+        </div>
+    </div>
+
     <div id="socials" class="socials-section">
         <div class="wrapper-title" data-aos="fade-up">Find Me Online</div>
         <div class="wrapper-desc" data-aos="fade-up" data-aos-delay="100">
@@ -950,12 +1454,51 @@
             <span class="hint-text">Ask me a question! ✨</span>
             <div class="hint-arrow"></div>
         </div>
+
+        <!-- Sys Arch Button -->
+        <button class="sys-arch-btn" id="sysArchBtn" aria-label="System Architecture">
+            Sys Arch!
+        </button>
+
         <button class="assistant-btn" id="assistantToggle" aria-label="Ask Muneeb">
             <div class="bot-icon-container">
                 <i class="fas fa-robot"></i>
                 <div class="bot-pulse"></div>
             </div>
         </button>
+    </div>
+
+    <!-- Sys Arch Overlay -->
+    <div class="sys-arch-overlay" id="sysArchOverlay">
+        <svg class="sys-arch-transition" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="arch-grad" x1="0" y1="0" x2="99" y2="99" gradientUnits="userSpaceOnUse">
+                    <stop offset="0.2" stop-color="rgb(255, 135, 9)" />
+                    <stop offset="0.7" stop-color="rgb(247, 189, 248)" />
+                </linearGradient>
+            </defs>
+            <path class="arch-path" stroke="url(#arch-grad)" fill="url(#arch-grad)" stroke-width="2px"
+                vector-effect="non-scaling-stroke" d="M 0 100 V 100 Q 50 100 100 100 V 100 z" />
+        </svg>
+        <div class="sys-arch-content">
+            <div class="arch-flow">
+                <div class="arch-node">Client</div>
+                <div class="arch-arrow">▼</div>
+                <div class="arch-node">REST API</div>
+                <div class="arch-arrow">▼</div>
+                <div class="arch-node">Save Lead</div>
+                <div class="arch-arrow">▼</div>
+                <div class="arch-node">Hangfire Queue</div>
+                <div class="arch-arrow">▼</div>
+                <div class="arch-node">Ping Buyers</div>
+                <div class="arch-arrow">▼</div>
+                <div class="arch-node">Highest Bid</div>
+                <div class="arch-arrow">▼</div>
+                <div class="arch-node">Post Lead</div>
+                <div class="arch-arrow">▼</div>
+                <div class="arch-node">Reports Dashboard</div>
+            </div>
+        </div>
     </div>
 
 </body>
